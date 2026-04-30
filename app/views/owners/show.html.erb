@@ -17,3 +17,14 @@
   <% end %>
   
 </ul>
+
+<hr>
+
+<%= link_to "Edit", edit_owner_path(@owner), class: "btn btn-warning" %>
+
+<%= button_to "Delete", owner_path(@owner),
+      method: :delete,
+      data: { turbo_confirm: "Are you sure?" },
+      class: "btn btn-danger" %>
+
+<%= link_to "Back to owners", owners_path, class: "btn btn-secondary" %>

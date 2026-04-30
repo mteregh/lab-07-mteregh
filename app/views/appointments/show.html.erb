@@ -39,3 +39,57 @@
   <p>No treatments recorded for this appointment.</p>
   
 <% end %>
+
+<hr>
+
+<%= link_to "Edit", edit_appointment_path(@appointment), class: "btn btn-warning" %>
+
+<%= button_to "Delete", appointment_path(@appointment),
+      method: :delete,
+      data: { turbo_confirm: "Are you sure?" },
+      class: "btn btn-danger" %>
+
+<%= link_to "Back to appointments", appointments_path, class: "btn btn-secondary" %>
+
+<hr>
+
+<h3>Treatments</h3>
+
+<%= link_to "New Treatment",
+      new_appointment_treatment_path(@appointment),
+      class: "btn btn-primary mb-3" %>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Medication</th>
+      <th>Dosage</th>
+      <th>Administered at</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @appointment.treatments.each do |t| %>
+      <tr>
+        <td><%= t.name %></td>
+        <td><%= t.medication %></td>
+        <td><%= t.dosage %></td>
+        <td><%= t.administered_at&.strftime("%B %d, %Y %I:%M %p") %></td>
+
+        <td>
+          <%= link_to "Edit",
+                edit_appointment_treatment_path(@appointment, t),
+                class: "btn btn-warning btn-sm me-1" %>
+
+          <%= button_to "Delete",
+                appointment_treatment_path(@appointment, t),
+                method: :delete,
+                data: { turbo_confirm: "Are you sure?" },
+                class: "btn btn-danger btn-sm d-inline" %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

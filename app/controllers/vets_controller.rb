@@ -44,8 +44,8 @@ class VetsController < ApplicationController
     @vet = Vet.find(params[:id])
   end
 
-  def vet_params
-    params.require(:vet).permit(:name, :specialty, :phone, :email)
-  end
+ def vet_params
+  params.require(:vet).permit(:first_name, :last_name, :phone, :email, :specialization)
+ end
   
 end

@@ -1,0 +1,32 @@
+<%= render "shared/error_messages", object: appointment %>
+
+<%= form_with(model: appointment) do |form| %>
+
+  <div class="mb-3">
+    <%= form.label :pet_id, "Pet", class: "form-label" %>
+    <%= form.collection_select :pet_id, Pet.all, :id, :name, { prompt: "Select pet" }, class: "form-select" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :vet_id, "Vet", class: "form-label" %>
+    <%= form.collection_select :vet_id, Vet.all, :id, :first_name, { prompt: "Select vet" }, class: "form-select" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :date, class: "form-label" %>
+    <%= form.datetime_field :date, class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :reason, class: "form-label" %>
+    <%= form.text_area :reason, class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :status, class: "form-label" %>
+    <%= form.select :status, Appointment.statuses.keys, {}, class: "form-select" %>
+  </div>
+
+  <%= form.submit class: "btn btn-primary" %>
+
+<% end %>

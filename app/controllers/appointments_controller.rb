@@ -6,6 +6,9 @@ class AppointmentsController < ApplicationController
   end
 
   def show
+    @appointment = Appointment
+      .includes(treatments: :rich_text_clinical_notes)
+      .find(params[:id])
   end
 
   def new

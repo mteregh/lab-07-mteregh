@@ -157,7 +157,7 @@ Treatment.create!(
   name: "Skin Cream Application",
   medication: "Hydrocortisone Cream",
   dosage: "Apply twice daily",
-  notes: "Monitor redness and itching",
+  clinical_notes: "<h3>Skin irritation follow-up</h3><ul><li>Monitor redness and itching.</li><li>Apply cream twice daily.</li></ul><p><strong>Return if symptoms worsen.</strong></p>",
   administered_at: DateTime.new(2026, 4, 11, 11, 45, 0)
 )
 
@@ -166,7 +166,7 @@ Treatment.create!(
   name: "Teeth Cleaning",
   medication: "Dental Rinse",
   dosage: "5 ml after cleaning",
-  notes: "Procedure completed successfully",
+  clinical_notes: "<h3>Dental procedure</h3><ul><li>Cleaning completed successfully.</li><li>No major complications observed.</li></ul><p><strong>Continue dental care at home.</strong></p>",
   administered_at: DateTime.new(2026, 4, 12, 9, 45, 0)
 )
 
@@ -175,7 +175,7 @@ Treatment.create!(
   name: "Pain Relief",
   medication: "Meloxicam",
   dosage: "0.2 mg/kg once daily",
-  notes: "Given after dental procedure",
+  clinical_notes: "<h3>Pain control</h3><ul><li>Medication given after dental procedure.</li><li>Monitor appetite and behavior.</li></ul><p><strong>Use only as prescribed.</strong></p>",
   administered_at: DateTime.new(2026, 4, 12, 10, 0, 0)
 )
 
@@ -184,7 +184,7 @@ Treatment.create!(
   name: "Bandage Placement",
   medication: "Antiseptic Solution",
   dosage: "Clean area before bandage",
-  notes: "Bandage should be changed in 3 days",
+  clinical_notes: "<h3>Leg injury care</h3><ul><li>Area cleaned before bandage placement.</li><li>Bandage should be changed in 3 days.</li></ul><p><strong>Keep bandage dry.</strong></p>",
   administered_at: DateTime.new(2026, 4, 13, 14, 30, 0)
 )
 
@@ -193,7 +193,7 @@ Treatment.create!(
   name: "Anti-inflammatory Injection",
   medication: "Carprofen",
   dosage: "1 injection",
-  notes: "Pet responded well",
+  clinical_notes: "<h3>Injection notes</h3><ul><li>Pet responded well.</li><li>No immediate adverse reaction observed.</li></ul><p><strong>Monitor during the next 24 hours.</strong></p>",
   administered_at: DateTime.new(2026, 4, 13, 14, 40, 0)
 )
 

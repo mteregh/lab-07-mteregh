@@ -75,6 +75,27 @@ pets = [
     weight: 5.0
   )
 ]
+seed_photos = [
+  [pets[0], "dog.jpg"],
+  [pets[1], "cat.jpg"],
+  [pets[2], "rabbit.jpg"],
+  [pets[3], "dog.jpg"],
+  [pets[4], "cat.jpg"]
+]
+
+seed_photos.each do |pet, filename|
+  path = Rails.root.join("db/seeds/pets/#{filename}")
+
+  if File.exist?(path)
+    pet.photo.attach(
+      io: File.open(path),
+      filename: filename,
+      content_type: "image/jpeg"
+    )
+  else
+    puts "Missing seed image: #{path}"
+  end
+end
 
 vets = [
   Vet.create!(
